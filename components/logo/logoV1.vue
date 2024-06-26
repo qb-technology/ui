@@ -8,13 +8,26 @@ defineProps({
     textClass: {
         type: String,
         default: 'text-lg sm:text-2xl uppercase'
+    },
+    img: {
+        type: [String, Boolean],
+        default: false
+    },
+    to: {
+        type: String,
+        default: '/'
     }
 })
 </script>
 
 <template>
-    <div class="flex items-center gap-1">
-        <LogoFavicon :class="faviconClass" />
-        <span :class="textClass" class="leading-tight font-bold">qb tech</span>
-    </div>
+    <ULink :to="to">
+        <slot name="logo">
+            <div class="flex items-center gap-1">
+                <NuxtImg v-if="typeof img == 'string'" :src="img" :class="faviconClass" />
+                <LogoFavicon :class="faviconClass" />
+                <span :class="textClass" class="leading-tight font-bold">qb tech</span>
+            </div>
+        </slot>
+    </ULink>
 </template>
