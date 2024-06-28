@@ -13,9 +13,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="grid gap-12"
-    :class="[layoutOrientation == 'center' && 'justify-items-center', layoutOrientation == 'right' && 'justify-items-end', p]">
-    <Text :section-text="sectionText" :orientation="layoutOrientation" />
-    <slot />
+  <div class="gap-12"
+    :class="[layoutOrientation == 'center' && 'justify-items-center', layoutOrientation == 'right' && 'justify-items-end', layoutOrientation == 'left' && 'justify-between', p, layoutOrientation == 'center' ? 'grid' : 'flex']">
+    <div>
+      <Text :section-text="sectionText" :orientation="layoutOrientation" />
+    </div>
+    <div>
+      <slot />
+    </div>
   </div>
 </template>
