@@ -15,11 +15,11 @@ export const menuLinks = [
         to: '/services',
 
     },
-    {
-        label: 'Pricing',
-        to: '/pricing',
+    // {
+    //     label: 'Pricing',
+    //     to: '/pricing',
 
-    },
+    // },
     {
         label: 'Contact',
         to: '/contact',

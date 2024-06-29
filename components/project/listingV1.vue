@@ -28,7 +28,7 @@ defineProps({
         <NuxtLink :to="to">
             <slot name="image">
                 <LazyNuxtImg :src="image" placeholder="/image-placeholoder-dark.png" preset="proImage" width="352"
-                    height="238" format="webp" class="w-full" />
+                    height="238" format="webp" class="w-full aspect-project" />
             </slot>
         </NuxtLink>
         <!--name & icon w/ desc-->
@@ -48,8 +48,8 @@ defineProps({
         <!--button-->
         <div class="w-full">
             <slot name="button">
-                <UButton :to="to" target="_blank" label="View Product" :variant="isActive ? 'solid' : 'outline'"
-                    :color="color" block :ui="{ rounded: 'rounded-md' }" />
+                <UButton :to="to" target="_blank" label="View Project" icon="i-heroicons-arrow-top-right-on-square"
+                    :variant="isActive ? 'solid' : 'outline'" :color="color" block :ui="{ rounded: 'rounded-md' }" />
 
             </slot>
         </div>
