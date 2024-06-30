@@ -37,7 +37,8 @@ defineProps({
 
         </div>
         <slot name="p">
-            <p v-if="Boolean(sectionText.p)" class="text-lg">{{ sectionText.p }}</p>
+            <p v-if="Boolean(sectionText.p)" class="text-lg text-pretty text-gray-700 dark:text-gray-200">{{
+                sectionText.p }}</p>
         </slot>
     </div>
 </template>
