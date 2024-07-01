@@ -1,12 +1,11 @@
 <script setup lang='ts'>
 interface pr {
-  icon?: string,
   title?: string,
-  description?: string
+  description?: string,
+  step?: number | string
 }
 
 const props = withDefaults(defineProps<pr>(), {
-  icon: 'heroicons:rocket-launch',
   title: 'Fast',
   description: 'Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.'
 })
@@ -15,9 +14,11 @@ const props = withDefaults(defineProps<pr>(), {
 </script>
 
 <template>
-  <UCard :ui="{ body: { base: 'flex flex-col gap-4' }, background: '' }">
-    <UIcon :name="props.icon" class="w-12 h-12" :ui="{ rounded: 'rounded-md' }" />
-    <p class="font-base font-bold capitalize">{{ props.title }}</p>
-    <p class="text-sm/4 text-gray-500 dark:text-gray-400">{{ props.description }}</p>
+  <UCard :ui="{ body: { base: 'flex flex-col gap-4 text-center' }, background: '' }">
+    <p class="text-base md:text-lg font-semibold capitalize">{{ props.title }}</p>
+    <p class="text-sm/4 text-gray-500 dark:text-gray-400 flex-grow block">{{ props.description }}</p>
+    <div class="flex flex-col items-center justify-normal">
+      <UButton :label="`Step ${step}`" variant="outline" :ui="{ rounded: 'rounded-md' }" />
+    </div>
   </UCard>
 </template>

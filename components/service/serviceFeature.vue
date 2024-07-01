@@ -2,7 +2,8 @@
 interface pr {
   icon?: string,
   title?: string,
-  description?: string
+  description?: string,
+  iconClass?: string
 }
 
 const props = withDefaults(defineProps<pr>(), {
@@ -15,9 +16,9 @@ const props = withDefaults(defineProps<pr>(), {
 </script>
 
 <template>
-  <UCard :ui="{ body: { base: 'flex flex-col gap-4' } }">
-    <UIcon :name="props.icon" class="w-12 h-12" :ui="{ rounded: 'rounded-md' }" />
-    <p class="font-base font-bold capitalize">{{ props.title }}</p>
+  <UCard :ui="{ body: { base: 'flex flex-col gap-4' }, background: '' }">
+    <UIcon :name="props.icon" class="w-12 h-12" :ui="{ rounded: 'rounded-md' }" :class="iconClass" />
+    <p class="text-base font-bold capitalize">{{ props.title }}</p>
     <p class="text-sm/4 text-gray-500 dark:text-gray-400">{{ props.description }}</p>
   </UCard>
 </template>
