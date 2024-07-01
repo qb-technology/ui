@@ -39,8 +39,8 @@ defineProps({
                 </slot>
                 <slot name="title">
                     <div class="space-y-2">
-                        <p class="font-medium truncate">{{ title }}</p>
-                        <p class=" text-gray-500 dark:text-gray-400 truncate w-full">{{ desc }}</p>
+                        <p class="font-medium text-pretty">{{ title }}</p>
+                        <p class=" text-gray-500 dark:text-gray-400 text-pretty w-full">{{ desc }}</p>
                     </div>
                 </slot>
             </slot>
