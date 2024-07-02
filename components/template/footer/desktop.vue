@@ -1,27 +1,9 @@
 <script setup lang='ts'>
+type links = { name: string, to: string }
+defineProps({
+    icons: Array<links>
+})
 
-const icons = [
-    {
-        name: 'mdi:youtube',
-        to: '#'
-    },
-    {
-        name: 'uil:facebook-f',
-        to: '#'
-    },
-    {
-        name: 'ri:twitter-x-line',
-        to: '#'
-    },
-    {
-        name: 'mdi:instagram',
-        to: '#'
-    },
-    {
-        name: 'ri:linkedin-fill',
-        to: '#'
-    },
-]
 </script>
 
 <template>
@@ -39,7 +21,7 @@ const icons = [
             <p>QB TECH &copy; 2024. All rights reserved</p>
             <div class="flex items-center gap-2">
                 <UButton v-for="link in icons" variant="ghost" color="gray" :to="link.to" :icon="link.name"
-                    aria-label="social icon" />
+                    target="_blank" aria-label="social icon" />
             </div>
         </div>
     </div>
