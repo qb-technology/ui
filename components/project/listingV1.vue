@@ -27,15 +27,16 @@ defineProps({
         <!--image-->
         <NuxtLink :to="to">
             <slot name="image">
-                <LazyNuxtImg :src="image" placeholder="/image-placeholoder-dark.png" preset="proImage" width="352"
-                    height="238" format="webp" class="w-full aspect-project" />
+                <LazyNuxtImg :src="image" placeholder="/image-placeholoder-dark.png" :alt="`${title} favicon`"
+                    preset="proImage" width="352" height="238" format="webp" class="w-full aspect-project" />
             </slot>
         </NuxtLink>
         <!--name & icon w/ desc-->
         <div class="flex items-center gap-2.5 max-w-full">
             <slot name="iconTitle">
                 <slot name="favicon">
-                    <LazyNuxtImg :src="favicon" preset="proFavicon" width="35" height="35" format="webp" />
+                    <LazyNuxtImg :src="favicon" preset="proFavicon" width="35" height="35" format="webp"
+                        :alt="`${title} image`" />
                 </slot>
                 <slot name="title">
                     <div class="space-y-2">
