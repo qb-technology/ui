@@ -38,7 +38,8 @@ const icons = [
             class="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-1 pb-4 md:pb-5 text-gray-700 dark:text-gray-200">
             <p>QB TECH &copy; 2024. All rights reserved</p>
             <div class="flex items-center gap-2">
-                <UButton v-for="link in icons" variant="ghost" color="gray" :to="link.to" :icon="link.name" />
+                <UButton v-for="link in icons" variant="ghost" color="gray" :to="link.to" :icon="link.name"
+                    aria-label="social icon" />
             </div>
         </div>
     </div>

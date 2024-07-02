@@ -26,7 +26,8 @@ const nuxtImg = resolveComponent('LazyNuxtImg')
     <UCard :ui="{ body: { base: 'flex flex-col gap-6' } }">
         <q class="text-gray-600 dark:text-gray-300">{{ props.msg }}</q>
         <div class="flex items-center gap-3 relative">
-            <UAvatar :as="nuxtImg" v-bind="props.avatar" :alt="props?.avatar?.alt ?? props.name" size="sm" />
+            <UAvatar :as="nuxtImg" v-bind="props.avatar" :alt="props?.avatar?.alt ?? props.name" size="sm"
+                placeholder />
             <div>
                 <ULink :to="url" target="_blank" rel="noopener noreferrer" :arial-label="props.name"
                     class="focus:outline-none" tabindex="-1">
