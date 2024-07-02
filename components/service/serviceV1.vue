@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<pr>(), {
             <!-- <UIcon :name="props.icon" class="w-12 h-12" /> -->
             <UButton :icon="props.icon" size="xl" variant="soft" square />
             <p class="text-base font-bold capitalize">{{ props.title }}</p>
-            <p class="text-sm/4 text-gray-500 dark:text-gray-400">{{ props.excerpt }}</p>
+            <p class="text-sm/4 text-gray-700 dark:text-gray-300">{{ props.excerpt }}</p>
         </UCard>
     </ULink>
 </template>

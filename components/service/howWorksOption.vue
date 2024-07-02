@@ -14,9 +14,11 @@ const props = withDefaults(defineProps<pr>(), {
 </script>
 
 <template>
-  <UCard :ui="{ body: { base: 'flex flex-col gap-4 text-center' }, background: '' }">
-    <p class="text-base md:text-lg font-semibold capitalize">{{ props.title }}</p>
-    <p class="text-sm/4 text-gray-500 dark:text-gray-400 flex-grow block">{{ props.description }}</p>
+  <UCard :ui="{ body: { base: 'flex flex-col gap-4 h-full' }, background: '', base: 'h-full' }">
+    <p class="text-base font-semibold capitalize text-center">{{ props.title }}</p>
+    <div class="flex-grow grid place-content-center">
+      <p class="text-sm/4 text-gray-700 dark:text-gray-300 text-balance text-center">{{ props.description }}</p>
+    </div>
     <div class="flex flex-col items-center justify-normal">
       <UButton :label="`Step ${step}`" variant="outline" :ui="{ rounded: 'rounded-md' }" />
     </div>
